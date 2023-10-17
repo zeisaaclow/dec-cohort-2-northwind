@@ -1,0 +1,29 @@
+version: 1
+
+models:
+  - name: fact_order_detail
+    columns:
+      - name: ship_city
+      - name: ship_postal_code
+      - name: required_date
+      - name: freight
+      - name: ship_region
+      - name: order_date
+        tests:
+          - not_null  
+      - name: employee_id
+        tests:
+          - not_null  
+      - name: shipped_date
+        tests:
+          - is_before_or_equal_to:
+              before_date: order_date     
+      - name: customer_id
+        tests:
+          - not_null  
+      - name: order_id
+        tests:
+          - not_null
+      - name: ship_name
+      - name: ship_country
+
