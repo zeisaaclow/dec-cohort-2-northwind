@@ -1,0 +1,192 @@
+version: 2
+sources:
+  - name: northwind
+    database: northwind_dw
+    schema: public
+    tables:
+      - name: orders
+        description: 'Captures the order information for a purchase'
+        columns:
+          - name: ship_city
+            description: ''
+            
+          - name: ship_postal_code
+            description: ''
+            
+          - name: required_date
+            description: ''
+            
+          - name: freight
+            description: ''
+            
+          - name: ship_region
+            description: ''
+            
+          - name: order_date
+            description: ''
+            
+          - name: employee_id
+            description: ''
+            
+          - name: shipped_date
+            description: ''
+            
+          - name: ship_via
+            description: ''
+
+          - name: customer_id
+            description: ''
+
+          - name: ship_address
+            description: ''
+
+          - name: ship_via
+            description: ''
+
+          - name: order_id
+            description: ''
+
+          - name: ship_name
+            description: ''
+
+          - name: ship_country
+            description: ''
+
+          - name: ship_name
+            description: ''
+
+          - name: ship_country
+            description: ''
+      - name: order_details
+        description: 'Captures each product line item of each order'
+        columns: 
+          - name: order_id
+            description: ''
+
+          - name: product_id
+            description: ''
+            
+          - name: unit_price
+            description: ''
+            
+          - name: quantity
+            description: ''
+
+          - name: discount
+            description: ''
+      - name: categories
+        description: 'Each row represents a unique product category'
+        columns:
+          - name: category_name
+            description: ''
+          - name: category_id
+            description: ''
+          - name: description
+            description: ''
+      - name: products
+        description: 'Each row represents a unique product'
+        columns:
+          - name: reorder_level
+            description: ''
+          - name: category_id
+            description: ''
+          - name: units_in_stock
+            description: ''
+          - name: units_on_order
+            description: ''
+          - name: product_id
+            description: ''
+          - name: quantity_per_unit
+            description: ''
+          - name: discontinued
+            description: ''
+          - name: unit_price
+            description: ''
+          - name: supplier_id
+            description: ''
+          - name: product_name
+            description: ''
+      - name: employees
+        description: 'Each row represents an employee at Northwind'
+        columns:
+          - name: country
+            description: ''
+          - name: home_phone
+            description: ''
+          - name: extension
+            description: ''
+          - name: notes
+            description: ''
+          - name: address
+            description: ''
+          - name: title_of_courtesy
+            description: ''
+          - name: photo
+            description: ''
+          - name: last_name
+            description: ''
+          - name: hire_date
+            description: ''
+          - name: title
+            description: ''
+          - name: photo_path
+            description: ''
+          - name: title
+            description: ''
+          - name: reports_to
+            description: ''
+          - name: employee_id
+            description: ''
+          - name: region
+            description: ''
+          - name: postal_code
+            description: ''
+          - name: first_name
+            description: ''
+      - name: employee_territories
+        description: 'Junction table table between employees and territories'
+        columns:
+          - name: employee_id
+            description: ''
+          - name: territory_id
+            description: ''
+      - name: territories
+        description: 'Each row represents a unique territory'
+        columns:
+          - name: territory_id
+            description: ''
+          - name: territory_description
+            description: ''
+          - name: region_id
+            description: ''
+      - name: region
+        description: 'Each row represents a northwind region'
+        columns:
+          - name: region_id
+            description: ''
+          - name: region_description
+            description: ''
+      - name: customers
+        description: 'Each row represents a unique customer'
+        columns:
+          - name: customer_id
+          - name: company_name
+          - name: contact_name
+          - name: contract_title
+          - name: address
+          - name: city
+          - name: region
+          - name: postal_code
+          - name: country
+          - name: phone
+          - name: fax
+      - name: customer_customer_demo
+        description: 'Maps customer demographics to customer'
+        columns:
+          - name: customer_id
+          - name: customer_type_id
+      - name: customer_demographics
+        description: ''
+        columns:
+          - name: customer_type_id
+          - name: customer_desc
