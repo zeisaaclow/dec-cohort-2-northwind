@@ -32,6 +32,7 @@ FROM
 )
 
 SELECT 
+	{{ dbt_utils.generate_surrogate_key(['c.customer_id']) }} as customer_key_hash,
 	c.country,
 	c.contact_name,
 	c.address,
