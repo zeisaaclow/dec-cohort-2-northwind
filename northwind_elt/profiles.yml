@@ -1,0 +1,12 @@
+northwind_elt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: postgres
+      dbname: northwind_dw
+      schema: serving
